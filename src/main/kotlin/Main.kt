@@ -32,9 +32,9 @@ fun main(args: Array<String>) {
 
 
     //6,7,0,8,3,1,2   2,4,5,5,5,4,3,0
-//  var mutableList = mutableListOf("sahaj","singh","parmar")
-//    QuickSort(mutableList,0,mutableList.size-1)
-//    println(mutableList)
+  var mutableList = mutableListOf("sahaj","singh","parmar")
+   //f QuickSort(mutableList,0,mutableList.size-1)
+    println(mutableList)
 
 
 
