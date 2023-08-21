@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sortwithClone.iml" filepath="$PROJECT_DIR$/sortwithClone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sortwith-clone_in_kotlin.iml" filepath="$PROJECT_DIR$/sortwith-clone_in_kotlin.iml" />
     </modules>
   </component>
 </project>
