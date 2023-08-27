@@ -2,16 +2,17 @@ import java.awt.Shape
 
 fun main(args: Array<String>) {
 
-   var cirle1 = circle("cirlce1",3.3)//cirlce1 have area = 34.1946
-   var sqare1 = sqare("sqare1",3.74)//sqare1 have area = 13.987600000000002
+   var circle = circle("cirlce1",3.3)//circle1 have area = 34.1946
+   var sqaure1 = sqare("square1",3.74)//square1 have area = 13.987600000000002
    var triangle2 = triangle("triangle",34.7,6.8)//triangle have area = 117.98
+    //this selector can't be used in all cases
     var selector:(shape) -> Comparable<*>? = {it.area}
 
 
 
 
 
-   var shapelist = mutableListOf (cirle1,sqare1,triangle2)
+   var shapelist = mutableListOf (circle,sqaure1,triangle2)
    var decide = Comparator{shape1:shape,shpa2:shape->
        when{
            (selector(shape1) as Comparable<Any>).compareTo(selector(shpa2) as Comparable<Any>)==1 -> 1// as is used to typecast selectors in subtypes
@@ -24,10 +25,11 @@ fun main(args: Array<String>) {
         println("${it.name} = ${selector(it)}")
     }
     println("")
-    QuickSort(shapelist,0,shapelist.size-1,selector as (Any) ->Comparable<Any> )
+   shapelist.sort { it.area }
     shapelist.forEach{
         println("${it.name} = ${selector(it)}")
     }
+
 
 
 

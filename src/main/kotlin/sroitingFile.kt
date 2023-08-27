@@ -8,15 +8,13 @@ fun <T> Collection<T>.customFilter( filerOut:(T)->Boolean):List<T>{
     return list
 }
 
+//this is the extension function that uses lambda function to sort
+fun <T,R:Comparable<R>> MutableList<T>.sort(selector: (T) -> Comparable<R>) {
 
-//fun <T> Collection<T>.sort(selector: (T) -> Comparable<Any>): MutableList<T> {
-//    val newArr = mutableListOf<T>()
-//    forEach {
-//        newArr.add(it)
-//    }
-//    QuickSort(newArr, 0, this.size - 1, selector)
-//    return newArr
-//}
+
+   QuickSort(this as MutableList<Any>, 0, this.size - 1, selector as (Any) ->Comparable<Any>)
+
+}
 
 
 
@@ -24,8 +22,8 @@ fun <T> Collection<T>.customFilter( filerOut:(T)->Boolean):List<T>{
 
 
 
-//sorting file for every datatype
-fun  < T : Comparable<T>>QuickSort(arr: MutableList<T>,left:Int,right:Int , selector: (Any) -> Comparable<Any> ){
+//sorting func for every datatype
+fun  QuickSort(arr: MutableList<Any>,left:Int,right:Int , selector: (Any) -> Comparable<Any> ){
 
     //find pivot
     var pivot:Int = left-1
